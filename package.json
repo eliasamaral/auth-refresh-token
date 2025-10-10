@@ -1,0 +1,31 @@
+{
+	"name": "auth-refresh-token",
+	"version": "1.0.0",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"compose": "docker compose up -d && npm run dev",
+		"dev": "npm run migrate && npm run seed && node --watch --env-file=.env src/index.js",
+		"migrate": "npx prisma migrate dev --name init",
+		"seed": "node src/utils/seed.js"
+	},
+
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"dependencies": {
+		"@prisma/client": "^6.16.2",
+		"@scalar/express-api-reference": "^0.8.18",
+		"argon2": "^0.44.0",
+		"express": "^5.1.0",
+		"express-rate-limit": "^8.1.0",
+		"jsonwebtoken": "^9.0.2",
+		"zod": "^4.1.12"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.2.5",
+		"prisma": "^6.16.2"
+	}
+}
+
+
