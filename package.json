@@ -7,9 +7,9 @@
 		"compose": "docker compose up -d && npm run dev",
 		"dev": "npm run migrate && npm run seed && node --watch --env-file=.env src/index.js",
 		"migrate": "npx prisma migrate dev --name init",
-		"seed": "node src/utils/seed.js"
+		"seed": "node src/utils/seed.js",
+		"brute-force": "node src/utils/brute.force.test"
 	},
-
 	"author": "",
 	"license": "ISC",
 	"description": "",
@@ -17,6 +17,7 @@
 		"@prisma/client": "^6.16.2",
 		"@scalar/express-api-reference": "^0.8.18",
 		"argon2": "^0.44.0",
+		"axios": "^1.12.2",
 		"express": "^5.1.0",
 		"express-rate-limit": "^8.1.0",
 		"jsonwebtoken": "^9.0.2",
@@ -27,5 +28,3 @@
 		"prisma": "^6.16.2"
 	}
 }
-
-
