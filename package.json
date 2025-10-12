@@ -4,8 +4,7 @@
 	"main": "index.js",
 	"type": "module",
 	"scripts": {
-		"compose": "docker compose up -d && npm run dev",
-		"dev": "npm run migrate && npm run seed && node --watch --env-file=.env src/index.js",
+		"dev": "node --watch --env-file=.env src/index.js",
 		"migrate": "npx prisma migrate dev --name init",
 		"seed": "node src/utils/seed.js",
 		"brute-force": "node src/utils/brute.force.test"
