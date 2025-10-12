@@ -1,11 +1,11 @@
 import jwt from "jsonwebtoken";
-import auth from "../config/auth.js";
+import config from "../config/index.js";
 
 export const Tokens = {
 	token: (userId) => {
 		const token = jwt.sign({ type: "token" }, process.env.JWT_ACCESS_SECRET, {
 			subject: userId,
-			expiresIn: auth.access_token_expire,
+			expiresIn: config.access_token_expire,
 		});
 
 		return token;
@@ -16,7 +16,7 @@ export const Tokens = {
 			process.env.JWT_REFRESH_SECRET,
 			{
 				subject: userId,
-				expiresIn: auth.refresh_token_expire,
+				expiresIn: config.refresh_token_expire,
 			},
 		);
 
